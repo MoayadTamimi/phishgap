@@ -15,6 +15,24 @@ from pathlib import Path
 from PIL import Image
 from openai import OpenAI
 import streamlit as st
+import gspread
+from google.oauth2.service_account import Credentials
+
+
+def get_gsheet():
+    scope = [
+        "https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/drive"
+    ]
+    creds_dict = dict(st.secrets["gcp_service_account"])
+    creds = Credentials.from_service_account_info(
+        creds_dict, scopes=scope
+    )
+    client = gspread.authorize(creds)
+    sheet = client.open_by_key(
+        st.secrets["SPREADSHEET_ID"]
+    ).sheet1
+    return sheet
 
 _logo_raw = Image.open(Path(__file__).resolve().parent / "logoCropped.png").convert("RGBA")
 _pad = 8
@@ -2893,83 +2911,87 @@ elif step == 7:
         submit_save = st.button(t("btn_submit_save"), use_container_width=True)
 
     if submit_save:
-        sat_vals = [int(str(st.session_state[f"sat_{qi}"]).split(" ")[0]) for qi in range(4)]
-        satisfaction_avg = round(sum(sat_vals) / len(sat_vals), 2)
+        if st.session_state.get("results_saved", False):
+            st.success(t("rep_success"))
+        else:
+            st.session_state.results_saved = True
 
-        # Build errors & response_times JSON strings
-        sim1_trials = st.session_state.get("sim1_trials") or []
-        sim2_trials = st.session_state.get("sim2_trials") or []
-        all_errors = [
-            {"sim": 1, "email_id": t["email_id"], "dim": t["dimension"],
-             "user": t["user_answer"], "correct": t["correct"]}
-            for t in sim1_trials if t["incorrect"]
-        ] + [
-            {"sim": 2, "email_id": t["email_id"], "dim": t["dimension"],
-             "user": t["user_answer"], "correct": t["correct"]}
-            for t in sim2_trials if t["incorrect"]
-        ]
-        all_response_times = [
-            {"sim": 1, "email_id": t["email_id"], "seconds": t["elapsed_seconds"]}
-            for t in sim1_trials
-        ] + [
-            {"sim": 2, "email_id": t["email_id"], "seconds": t["elapsed_seconds"]}
-            for t in sim2_trials
-        ]
+            sat_vals = [int(str(st.session_state[f"sat_{qi}"]).split(" ")[0]) for qi in range(4)]
+            satisfaction_avg = round(sum(sat_vals) / len(sat_vals), 2)
 
-        csv_path = Path(__file__).resolve().parent / "results.csv"
-        fieldnames = [
-            "student_id", "timestamp", "student_name", "student_email", "student_major", "student_year",
-            "score_AW", "score_DB", "score_SV",
-            "risk_AW", "risk_DB", "risk_SV",
-            "actual_risk_AW", "actual_risk_DB", "actual_risk_SV",
-            "gap_AW", "gap_DB", "gap_SV",
-            "gap_type_AW", "gap_type_DB", "gap_type_SV",
-            "sim1_score", "sim2_score", "improvement",
-            "errors", "response_times",
-            "gpt_recommendation", "satisfaction_avg", "open_feedback",
-        ]
+            # Build errors & response_times JSON strings
+            sim1_trials = st.session_state.get("sim1_trials") or []
+            sim2_trials = st.session_state.get("sim2_trials") or []
+            all_errors = [
+                {"sim": 1, "email_id": t["email_id"], "dim": t["dimension"],
+                 "user": t["user_answer"], "correct": t["correct"]}
+                for t in sim1_trials if t["incorrect"]
+            ] + [
+                {"sim": 2, "email_id": t["email_id"], "dim": t["dimension"],
+                 "user": t["user_answer"], "correct": t["correct"]}
+                for t in sim2_trials if t["incorrect"]
+            ]
+            all_response_times = [
+                {"sim": 1, "email_id": t["email_id"], "seconds": t["elapsed_seconds"]}
+                for t in sim1_trials
+            ] + [
+                {"sim": 2, "email_id": t["email_id"], "seconds": t["elapsed_seconds"]}
+                for t in sim2_trials
+            ]
 
-        write_header = not csv_path.exists()
-        row = {
-            "student_id": str(uuid.uuid4())[:8],
-            "timestamp": datetime.now().isoformat(timespec="seconds"),
-            "student_name": st.session_state.get("student_name", ""),
-            "student_email": st.session_state.get("student_email", ""),
-            "student_major": st.session_state.get("student_major", ""),
-            "student_year": st.session_state.get("student_year", ""),
-            "score_AW": st.session_state["scores"]["AW"],
-            "score_DB": st.session_state["scores"]["DB"],
-            "score_SV": st.session_state["scores"]["SV"],
-            "risk_AW": st.session_state["self_report_risk"]["AW"],
-            "risk_DB": st.session_state["self_report_risk"]["DB"],
-            "risk_SV": st.session_state["self_report_risk"]["SV"],
-            "actual_risk_AW": st.session_state["sim1_actual_risk"]["AW"],
-            "actual_risk_DB": st.session_state["sim1_actual_risk"]["DB"],
-            "actual_risk_SV": st.session_state["sim1_actual_risk"]["SV"],
-            "gap_AW": st.session_state["sim1_gap"]["AW"],
-            "gap_DB": st.session_state["sim1_gap"]["DB"],
-            "gap_SV": st.session_state["sim1_gap"]["SV"],
-            "gap_type_AW": st.session_state["sim1_gap_type"]["AW"],
-            "gap_type_DB": st.session_state["sim1_gap_type"]["DB"],
-            "gap_type_SV": st.session_state["sim1_gap_type"]["SV"],
-            "sim1_score": st.session_state["sim1_score"],
-            "sim2_score": st.session_state["sim2_score"],
-            "improvement": st.session_state["improvement"],
-            "errors": json.dumps(all_errors, ensure_ascii=False),
-            "response_times": json.dumps(all_response_times, ensure_ascii=False),
-            "gpt_recommendation": st.session_state.get("sim1_gpt_recommendation", ""),
-            "satisfaction_avg": satisfaction_avg,
-            "open_feedback": st.session_state.get("sat_open_feedback", ""),
-        }
+            # Build row
+            row = {
+                "student_id": str(uuid.uuid4())[:8],
+                "timestamp": datetime.now().isoformat(timespec="seconds"),
+                "student_name": st.session_state.get("student_name", ""),
+                "student_email": st.session_state.get("student_email", ""),
+                "student_major": st.session_state.get("student_major", ""),
+                "student_year": st.session_state.get("student_year", ""),
+                "score_AW": st.session_state["scores"]["AW"],
+                "score_DB": st.session_state["scores"]["DB"],
+                "score_SV": st.session_state["scores"]["SV"],
+                "risk_AW": st.session_state["self_report_risk"]["AW"],
+                "risk_DB": st.session_state["self_report_risk"]["DB"],
+                "risk_SV": st.session_state["self_report_risk"]["SV"],
+                "actual_risk_AW": st.session_state["sim1_actual_risk"]["AW"],
+                "actual_risk_DB": st.session_state["sim1_actual_risk"]["DB"],
+                "actual_risk_SV": st.session_state["sim1_actual_risk"]["SV"],
+                "gap_AW": st.session_state["sim1_gap"]["AW"],
+                "gap_DB": st.session_state["sim1_gap"]["DB"],
+                "gap_SV": st.session_state["sim1_gap"]["SV"],
+                "gap_type_AW": st.session_state["sim1_gap_type"]["AW"],
+                "gap_type_DB": st.session_state["sim1_gap_type"]["DB"],
+                "gap_type_SV": st.session_state["sim1_gap_type"]["SV"],
+                "sim1_score": st.session_state["sim1_score"],
+                "sim2_score": st.session_state["sim2_score"],
+                "improvement": st.session_state["improvement"],
+                "errors": json.dumps(all_errors, ensure_ascii=False),
+                "response_times": json.dumps(all_response_times, ensure_ascii=False),
+                "gpt_recommendation": st.session_state.get("sim1_gpt_recommendation", ""),
+                "satisfaction_avg": satisfaction_avg,
+                "open_feedback": st.session_state.get("sat_open_feedback", ""),
+            }
 
-        with csv_path.open("a", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            if write_header:
-                writer.writeheader()
-            writer.writerow(row)
+            # Save to CSV
+            csv_path = Path(__file__).resolve().parent / "results.csv"
+            write_header = not csv_path.exists()
+            with csv_path.open("a", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, fieldnames=list(row.keys()))
+                if write_header:
+                    writer.writeheader()
+                writer.writerow(row)
 
-        st.success(t("rep_success"))
-        st.balloons()
+            # Save to Google Sheets
+            try:
+                sheet = get_gsheet()
+                if sheet.row_count <= 1 and not sheet.get_all_values():
+                    sheet.append_row(list(row.keys()))
+                sheet.append_row([str(row.get(f, "")) for f in row.keys()])
+            except Exception as e:
+                st.warning(f"Cloud save failed: {e}")
+
+            st.success(t("rep_success"))
+            st.balloons()
 
 
 else:
