@@ -1,0 +1,797 @@
+[
+  {
+    "id": "AW_01",
+    "dimension": "AW",
+    "from_email": "security@uni-mailguard.com",
+    "correct": "Phishing",
+    "difficulty": "easy",
+    "en": {
+      "tactic": "Institutional impersonation",
+      "from_name": "University IT Security",
+      "subject": "Action required – verify your student mailbox",
+      "body": "Dear student, we detected unusual sign-in attempts on your university email account.\n\nPlease verify your identity using the secure link below to avoid service interruption:\nhttps://sso.uni-mailguard.com/verify\n\nThank you,\nIT Security Team",
+      "why": "The sender uses uni-mailguard.com, not the university's official domain university.ac.il. Attackers often copy official language while hosting links on lookalike domains.",
+      "teach": "Always compare the full domain after the @ symbol against your university's official website before clicking any link or entering credentials.",
+      "red_flags": [
+        "fake domain (uni-mailguard.com)",
+        "generic greeting",
+        "urgent verification request",
+        "link to non-university.ac.il page"
+      ]
+    },
+    "ar": {
+      "tactic": "انتحال صفة مؤسسة",
+      "from_name": "أمن تكنولوجيا المعلومات بالجامعة",
+      "subject": "إجراء مطلوب – تحقق من صندوق بريد الطالب الخاص بك",
+      "body": "عزيزي الطالب، لقد اكتشفنا محاولات تسجيل دخول غير معتادة على حساب البريد الإلكتروني الجامعي الخاص بك.\n\nيرجى التحقق من هويتك باستخدام الرابط الآمن أدناه لتجنب انقطاع الخدمة:\nhttps://sso.uni-mailguard.com/verify\n\nشكراً لك،\nفريق أمن تكنولوجيا المعلومات",
+      "why": "يستخدم المرسل النطاق uni-mailguard.com وليس النطاق الرسمي للجامعة university.ac.il. غالباً ما ينسخ المهاجمون اللغة الرسمية أثناء استضافة الروابط على نطاقات شبيهة.",
+      "teach": "قارن دائماً النطاق الكامل بعد رمز @ بموقع الويب الرسمي لجامعتك قبل الضغط على أي رابط أو إدخال بيانات الاعتماد.",
+      "red_flags": [
+        "نطاق مزيف (uni-mailguard.com)",
+        "تحية عامة",
+        "طلب تحقق عاجل",
+        "رابط لصفحة ليست تابعة للجامعة university.ac.il"
+      ]
+    },
+    "he": {
+      "tactic": "התחזות למוסד",
+      "from_name": "אבטחת מידע של האוניברסיטה",
+      "subject": "נדרשת פעולה – אימות תיבת הדואר של הסטודנט שלך",
+      "body": "סטודנט יקר, זיהינו ניסיונות התחברות חריגים לחשבון הדוא\"ל האוניברסיטאי שלך.\n\nאנא אמת את זהותך באמצעות הקישור המאובטח שלהלן כדי למנוע הפרעה בשירות:\nhttps://sso.uni-mailguard.com/verify\n\nתודה,\nצוות אבטחת המידע",
+      "why": "השולח משתמש בדומיין uni-mailguard.com, ולא בדומיין הרשמי של האוניברסיטה university.ac.il. תוקפים מעתיקים לעיתים קרובות שפה רשמית תוך אירוח קישורים בדומיינים דומים.",
+      "teach": "השווה תמיד את הדומיין המלא שאחרי סימן ה-@ לעומת האתר הרשמי של האוניברסיטה שלך לפני לחיצה על קישור כלשהו או הזנת פרטי גישה.",
+      "red_flags": [
+        "דומיין מזויף (uni-mailguard.com)",
+        "ברכה כללית",
+        "בקשת אימות דחופה",
+        "קישור לדף שאינו university.ac.il"
+      ]
+    }
+  },
+  {
+    "id": "AW_02",
+    "dimension": "AW",
+    "from_email": "noreply@moodle-academic.info",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Institutional impersonation",
+      "from_name": "Moodle Course Sync",
+      "subject": "Course registration synchronization needed",
+      "body": "Hello, your Moodle course enrollment needs to be synchronized before the semester deadline.\n\nComplete the sync now to keep your elective seats reserved:\nhttps://portal.moodle-academic.info/enroll/sync\n\nRegistrar Support (Automated Notice)",
+      "why": "moodle-academic.info mimics your learning management system but is not hosted on the university's official domain. Real Moodle notifications come from university.ac.il addresses.",
+      "teach": "Access Moodle by typing the URL directly into your browser or using bookmarks — never through links in unexpected emails.",
+      "red_flags": [
+        "typosquat domain (.info)",
+        "pressure around registration deadline",
+        "link to unofficial portal"
+      ]
+    },
+    "ar": {
+      "tactic": "انتحال صفة مؤسسة",
+      "from_name": "مزامنة مساقات مودل",
+      "subject": "مطلوب مزامنة تسجيل المساقات",
+      "body": "مرحباً، يجب مزامنة تسجيلك في مساق مودل قبل الموعد النهائي للفصل الدراسي.\n\nأكمل المزامنة الآن للحفاظ على مقاعدك المحجوزة في المساقات الاختيارية:\nhttps://portal.moodle-academic.info/enroll/sync\n\nدعم مسجل العقود (إشعار تلقائي)",
+      "why": "يحاكي النطاق moodle-academic.info نظام إدارة التعلم الخاص بك ولكنه ليس مستضافاً على النطاق الرسمي للجامعة. تأتي إشعارات مودل الحقيقية من عناوين تنتهي بـ university.ac.il.",
+      "teach": "قم بالوصول إلى مودل عن طريق كتابة عنوان URL مباشرة في متصفحك أو باستخدام الإشارات المرجعية — ولا تفعل ذلك أبداً من خلال الروابط في رسائل البريد الإلكتروني غير المتوقعة.",
+      "red_flags": [
+        "نطاق منتحل (.info)",
+        "ضغط متعلق بالموعد النهائي للتسجيل",
+        "رابط إلى بوابة غير رسمية"
+      ]
+    },
+    "he": {
+      "tactic": "התחזות למוסד",
+      "from_name": "סנכרון קורסים במודל",
+      "subject": "נדרש סנכרון לרישום לקורסים",
+      "body": "שלום, יש לסנכרן את ההרשמה שלך לקורסים במודל לפני המועד האחרון של הסמסטר.\n\nהשלם את הסנכרון כעת כדי לשמור על המקומות השמורים לך בקורסי הבחירה:\nhttps://portal.moodle-academic.info/enroll/sync\n\nתמיכת רשם הלימודים (הודעה אוטומטית)",
+      "why": "הדומיין moodle-academic.info מחקה את מערכת ניהול הלמידה שלך אך אינו מאוחסן בדומיין הרשמי של האוניברסיטה. התראות מודל אמיתיות מגיעות מכתובות של university.ac.il.",
+      "teach": "היכנס למודל על ידי הקלדת כתובת ה-URL ישירות בדפדפן שלך או שימוש בסימניות — לעולם לא דרך קישורים בהודעות דוא\"ל בלתי צפויות.",
+      "red_flags": [
+        "דומיין מתחזה (.info)",
+        "לחץ סביב מועד ההרשמה",
+        "קישור לפורטל לא רשמי"
+      ]
+    }
+  },
+  {
+    "id": "AW_03",
+    "dimension": "AW",
+    "from_email": "admin@ms365-campus.net",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Institutional impersonation",
+      "from_name": "Microsoft 365 Admin",
+      "subject": "Password expiring — university Microsoft 365 account",
+      "body": "Your university Microsoft 365 password expires tomorrow under the quarterly security policy.\n\nUpdate your password now to keep access to Outlook, Teams, and OneDrive:\nhttps://renew.ms365-campus.net/password-reset\n\nIT Operations",
+      "why": "Microsoft 365 password resets for university accounts go through official university IT portals — not ms365-campus.net. The domain imitates Microsoft branding to steal credentials.",
+      "teach": "Navigate to your university's IT portal directly or use Microsoft's official site (microsoft.com) for password changes. Never trust third-party domains claiming to be Microsoft.",
+      "red_flags": [
+        "fake domain ms365-campus.net",
+        "password expiry deadline",
+        "link to external reset page"
+      ]
+    },
+    "ar": {
+      "tactic": "انتحال صفة مؤسسة",
+      "from_name": "مسؤول Microsoft 365",
+      "subject": "انتهاء صلاحية كلمة المرور — حساب Microsoft 365 الجامعي",
+      "body": "تنتهي صلاحية كلمة مرور حساب Microsoft 365 الجامعي الخاص بك غداً بموجب سياسة الأمن الربع سنوية.\n\nقم بتحديث كلمة المرور الخاصة بك الآن للحفاظ على إمكانية الوصول إلى Outlook وTeams وOneDrive:\nhttps://renew.ms365-campus.net/password-reset\n\nعمليات تكنولوجيا المعلومات",
+      "why": "تمر عمليات إعادة تعيين كلمة مرور Microsoft 365 لحسابات الجامعة عبر بوابات تكنولوجيا المعلومات الرسمية بالجامعة — وليس عبر ms365-campus.net. يحاكي النطاق علامة مايكروسوفت التجارية لسرقة بيانات الاعتماد.",
+      "teach": "انتقال إلى بوابة تكنولوجيا المعلومات بجامعتك مباشرةً أو استخدم موقع مايكروسوفت الرسمي (microsoft.com) لتغيير كلمة المرور. لا تثق أبداً بنطاقات الطرف الثالث التي تدعي أنها مايكروسوفت.",
+      "red_flags": [
+        "نطاق مزيف ms365-campus.net",
+        "الموعد النهائي لانتهاء صلاحية كلمة المرور",
+        "رابط لصفحة إعادة تعيين خارجية"
+      ]
+    },
+    "he": {
+      "tactic": "התחזות למוסד",
+      "from_name": "מנהל Microsoft 365",
+      "subject": "תוקף הסיסמה פג — חשבון Microsoft 365 אוניברסיטאי",
+      "body": "תוקף סיסמת ה-Microsoft 365 האוניברסיטאית שלך יפוג מחר במסגרת מדיניות האבטחה הרבעונית.\n\nעדכן את הסיסמה שלך כעת כדי לשמור על הגישה ל-Outlook, Teams ו-OneDrive:\nhttps://renew.ms365-campus.net/password-reset\n\nמערך מחשוב וטכנולוגיה",
+      "why": "איפוס סיסמאות Microsoft 365 עבור חשבונות אוניברסיטאיים מתבצע דרך פורטלי ה-IT הרשמיים של האוניברסיטה — לא דרך ms365-campus.net. הדומיין מחקה את המיתוג של מיקרוסופט כדי לגנוב פרטי גישה.",
+      "teach": "ניווט ישירות לפורטל ה-IT של האוניברסיטה שלך או השתמש באתר הרשמי של מיקרוסופט (microsoft.com) לצורך שינוי סיסמה. לעולם אל תסמוך על דומיינים של צד שלישי הטוענים שהם מיקרוסופט.",
+      "red_flags": [
+        "דומיין מזויף ms365-campus.net",
+        "מועד אחרון לפוג תוקף הסיסמה",
+        "קישור לדף איפוס חיצוני"
+      ]
+    }
+  },
+  {
+    "id": "AW_04",
+    "dimension": "AW",
+    "from_email": "library@university.ac.il",
+    "correct": "Legitimate",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Legitimate institutional message",
+      "from_name": "University Library Services",
+      "subject": "Overdue book — please return or renew",
+      "body": "Dear student,\n\nThe book you borrowed (barcode ending 7832) is now 3 days overdue. A late fee of $1/day will apply starting tomorrow.\n\nRenew online at library.university.ac.il/my-account or return it to the circulation desk.\n\nThank you,\nLibrary Team",
+      "why": "The email comes from library@university.ac.il, the link points to the official university library subdomain, and the tone is routine — overdue notices are normal library operations.",
+      "teach": "Legitimate emails can also request action. The key difference is: the domain is official (university.ac.il) and the link matches the sender's domain.",
+      "red_flags": []
+    },
+    "ar": {
+      "tactic": "رسالة مؤسسية شرعية",
+      "from_name": "خدمات المكتبة الجامعية",
+      "subject": "كتاب متأخر – يرجى إعادته أو تجديد إعارته",
+      "body": "عزيزي الطالب،\n\nالكتاب الذي استعرته (الذي ينتهي رمزه الشريطي بـ 7832) متأخر الآن لمدة 3 أيام. سيتم تطبيق رسوم تأخير بقيمة 1 دولار يومياً اعتباراً من الغد.\n\nقم بالتجديد عبر الإنترنت على library.university.ac.il/my-account أو أعده إلى مكتب الإعارة.\n\nشكرًا لك،\nفريق المكتبة",
+      "why": "يأتي البريد الإلكتروني من library@university.ac.il، ويشير الرابط إلى النطاق الفرعي الرسمي لمكتبة الجامعة، كما أن نبرة الرسالة روتينية — إشعارات التأخير هي عمليات طبيعية للمكتبة.",
+      "teach": "يمكن لرسائل البريد الإلكتروني الشرعية أيضاً أن تطلب اتخاذ إجراء. الاختلاف الرئيسي هو: النطاق رسمي (university.ac.il) والرابط يطابق نطاق المرسل.",
+      "red_flags": []
+    },
+    "he": {
+      "tactic": "הודעה מוסדית לגיטימית",
+      "from_name": "שירותי הספרייה באוניברסיטה",
+      "subject": "ספר באיחור – אנא החזר או הארך את השאלתו",
+      "body": "סטודנט יקר,\n\nהספר ששאלת (ברקוד המסתיים ב-7832) מאחר כעת ב-3 ימים. החל ממחר יחול קנס של $1 ליום.\n\nהארך את ההשאלה באינטרנט בכתובת library.university.ac.il/my-account או החזר אותו לדלפק ההשאלה.\n\nבתודה,\nצוות הספרייה",
+      "why": "האימייל מגיע מ-library@university.ac.il, הקישור מפנה לסוב-דומיין הרשמי של ספריית האוניברסיטה, והטון שגרתי — הודעות על איחור הן פעולות ספרייה רגילות.",
+      "teach": "אימיילים לגיטימיים יכולים גם הם לבקש ביצוע פעולה. ההבדל המרכזי הוא: הדומיין רשמי (university.ac.il) והקישור תואם לדומיין השולח.",
+      "red_flags": []
+    }
+  },
+  {
+    "id": "AW_05",
+    "dimension": "AW",
+    "from_email": "portal@university.ac.il",
+    "correct": "Legitimate",
+    "difficulty": "hard",
+    "en": {
+      "tactic": "Legitimate institutional message",
+      "from_name": "Student Portal",
+      "subject": "Action required — update your emergency contact info",
+      "body": "Hello,\n\nAs part of our annual records update, please verify your emergency contact details by Friday.\n\nLog in to portal.university.ac.il/profile and confirm or update your information.\n\nStudent Affairs Office",
+      "why": "The sender is portal@university.ac.il, the link goes to the official university portal subdomain, and updating emergency contacts is a standard annual process.",
+      "teach": "Not every email asking you to take action is phishing. Check the sender domain and the link domain — if both match the official university domain, it's likely safe.",
+      "red_flags": []
+    },
+    "ar": {
+      "tactic": "رسالة مؤسسية شرعية",
+      "from_name": "بوابة الطالب",
+      "subject": "إجراء مطلوب — تحديث معلومات الاتصال بالطوارئ",
+      "body": "مرحباً،\n\nكجزء من تحديث سجلاتنا السنوي، يرجى التحقق من تفاصيل الاتصال بالطوارئ الخاصة بك بحلول يوم الجمعة.\n\nسجل الدخول إلى portal.university.ac.il/profile وأكد أو حدث معلوماتك.\n\nمكتب شؤون الطلاب",
+      "why": "المرسل هو portal@university.ac.il، والرابط يوجه إلى النطاق الفرعي الرسمي لبوابة الجامعة، وتحديث جهات اتصال الطوارئ هو إجراء سنوي معتاد.",
+      "teach": "ليست كل رسالة بريد إلكتروني تطلب منك اتخاذ إجراء هي تصيد احتيالي. تحقق من نطاق المرسل ونطاق الرابط — إذا كان كلاهما يطابق النطاق الرسمي للجامعة، فمن المحتمل أن تكون الرسالة آمنة.",
+      "red_flags": []
+    },
+    "he": {
+      "tactic": "הודעה מוסדית לגיטימית",
+      "from_name": "פורטל הסטודנטים",
+      "subject": "נדרשת פעולה — עדכון פרטי קשר לשעת חירום",
+      "body": "שלום,\n\nכחלק מעדכון הרשומות השנתי שלנו, אנא אמת את פרטי הקשר שלך לשעת חירום עד יום שישי.\n\nהתחבר לכתובת portal.university.ac.il/profile ואשר או עדכן את המידע שלך.\n\nמשרד דיקן הסטודנטים",
+      "why": "השולח הוא portal@university.ac.il, הקישור מוביל לסוב-דומיין הרשמי של פורטל האוניברסיטה, ועדכון אנשי קשר לשעת חירום הוא תהליך שנתי סטנדרטי.",
+      "teach": "לא כל אימייל שמבקש ממך לבצע פעולה הוא פישינג. בדוק את דומיין השולח ואת דומיין הקישור — אם שניהם תואמים לדומיין הרשמי של האוניברסיטה, סביר להניח שהוא בטוח.",
+      "red_flags": []
+    }
+  },
+  {
+    "id": "AW_06",
+    "dimension": "AW",
+    "from_email": "feedback@university.ac.il",
+    "correct": "Legitimate",
+    "difficulty": "hard",
+    "en": {
+      "tactic": "Legitimate institutional message",
+      "from_name": "Course Evaluation System",
+      "subject": "Please complete your course evaluation",
+      "body": "Dear student,\n\nCourse evaluations for this semester are now open. Please complete your feedback by next Sunday.\n\nAccess the evaluation form at feedback.university.ac.il/evaluate.\n\nYour responses are anonymous and help improve teaching quality.\n\nThank you,\nAcademic Quality Unit",
+      "why": "The email is from feedback@university.ac.il, the link uses the official university subdomain, there is a reasonable (not panic-inducing) deadline, and course evaluations are a normal university process.",
+      "teach": "Legitimate emails may have deadlines too — but they give you days, not hours. And the domain always matches the official university domain.",
+      "red_flags": []
+    },
+    "ar": {
+      "tactic": "رسالة مؤسسية شرعية",
+      "from_name": "نظام تقييم المساقات",
+      "subject": "يرجى إكمال تقييم المساق الخاص بك",
+      "body": "عزيزي الطالب،\n\nتقييمات المساقات لهذا الفصل الدراسي مفتوحة الآن. يرجى إرسال ملاحظاتك بحلول يوم الأحد القادم.\n\nقم بالوصول إلى نموذج التقييم على feedback.university.ac.il/evaluate.\n\nإجاباتك مجهولة المصدر وتساعد في تحسين جودة التدريس.\n\nشكرًا لك،\nوحدة الجودة الأكاديمية",
+      "why": "البريد الإلكتروني مرسل من feedback@university.ac.il، والرابط يستخدم النطاق الفرعي الرسمي للجامعة، وهناك موعد نهائي معقول (لا يثير الذعر)، وتقييمات المساقات هي عملية جامعية معتادة.",
+      "teach": "قد تحتوي رسائل البريد الإلكتروني الشرعية على مواعيد نهائية أيضاً — لكنها تمنحك أياماً وليس ساعات. والنطاق يطابق دائماً النطاق الرسمي للجامعة.",
+      "red_flags": []
+    },
+    "he": {
+      "tactic": "הודעה מוסדית לגיטימית",
+      "from_name": "מערכת משוב קורסים",
+      "subject": "אנא מלא את סקר הערכת הקורסים שלך",
+      "body": "סטודנט יקר,\n\nסקרי הערכת הקורסים לסמסטר זה פתוחים כעת. אנא השלם את המשוב שלך עד יום ראשון הבא.\n\nגש לטופס ההערכה בכתובת feedback.university.ac.il/evaluate.\n\nתשובותיך הן אנונימיות ועוזרות לשפר את איכות ההוראה.\n\nבתודה,\nהיחידה להערכת איכות אקדמית",
+      "why": "האימייל נשלח מ-feedback@university.ac.il, הקישור משתמש בדומיין המשנה הרשמי של האוניברסיטה, ישנו דדליין סביר (לא מעורר פאניקה), והערכות קורסים הן תהליך אוניברסיטאי רגיל.",
+      "teach": "הודעות דוא\"ל לגיטימיות עשויות לכלול גם מועדים אחרונים — אך הן מעניקות לך ימים, לא שעות. והדומיין תמיד תואם לדומיין הרשמי של האוניברסיטה.",
+      "red_flags": []
+    }
+  },
+  {
+    "id": "DB_01",
+    "dimension": "DB",
+    "from_email": "returns@libnotice-portal.org",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Quiet phishing",
+      "from_name": "Library Notifications",
+      "subject": "Overdue item — renewal available",
+      "body": "Your library item (barcode ending 4421) passed its renewal window due to adjusted holiday hours.\n\nRenew or schedule a return here:\nhttps://checkout.libnotice-portal.org/renew\n\nNo fines apply unless another student places a hold.",
+      "why": "University library notifications come from university.ac.il addresses — not libnotice-portal.org. The routine tone is designed to lower your guard.",
+      "teach": "Even mundane operational emails deserve a sender-domain check. Phishing isn't always dramatic — sometimes it looks like a boring library notice.",
+      "red_flags": [
+        "non-university sender domain",
+        "quiet operational tone masking fake link"
+      ]
+    },
+    "ar": {
+      "tactic": "تصيد هادئ",
+      "from_name": "إشعارات المكتبة",
+      "subject": "مادة متأخرة — التجديد متاح",
+      "body": "لقد تجاوزت استعارتك من المكتبة (التي ينتهي رمزها الشريطي بـ 4421) نافذة التجديد الخاصة بها بسبب تعديل ساعات العمل في العطلات.\n\nجدد أو حدد موعداً للإرجاع هنا:\nhttps://checkout.libnotice-portal.org/renew\n\nلا تنطبق أي غرامات ما لم يقم طالب آخر بحجز المادة.",
+      "why": "تأتي إشعارات مكتبة الجامعة من عناوين تنتهي بـ university.ac.il — وليس من libnotice-portal.org. تم تصميم النبرة الروتينية لجعلك تخفض حذرك.",
+      "teach": "حتى رسائل البريد الإلكتروني التشغيلية العادية تستحق التحقق من نطاق المرسل. لا يكون التصيد الاحتيالي دراماتيكياً دائماً — في بعض الأحيان يبدو كإشعار مكتبة ممل.",
+      "red_flags": [
+        "نطاق مرسل غير جامعي",
+        "نبرة تشغيلية هادئة تخفي رابطاً مزيفاً"
+      ]
+    },
+    "he": {
+      "tactic": "פישינג שקט",
+      "from_name": "התראות ספרייה",
+      "subject": "פריט באיחור — הארכה זמינה",
+      "body": "פריט הספרייה שלך (ברקוד המסתיים ב-4421) עבר את חלון ההארכה שלו עקב שעות חג מעודכנות.\n\nהארך או קבע תאריך החזרה כאן:\nhttps://checkout.libnotice-portal.org/renew\n\nלא יחולו קנסות אלא אם כן סטודנט אחר יבצע הזמנה לפריט.",
+      "why": "התראות מספריית האוניברסיטה מגיעות מכתובות של university.ac.il — לא מ-libnotice-portal.org. הטון השגרתי נועד להוריד את מגננות האבטחה שלך.",
+      "teach": "אפילו הודעות תפעוליות בנאליות ראויות לבדיקה של דומיין השולח. פישינג אינו תמיד דרמטי — לפעמים הוא נראה כמו הודעת ספרייה משעממת.",
+      "red_flags": [
+        "דומיין שולח שאינו של האוניברסיטה",
+        "טון תפעולי שקט המסווה קישור מזויף"
+      ]
+    }
+  },
+  {
+    "id": "DB_02",
+    "dimension": "DB",
+    "from_email": "schedule@zoom-campus.xyz",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Quiet phishing",
+      "from_name": "Zoom Meeting Support",
+      "subject": "Confirm your Zoom meeting slot (today)",
+      "body": "Your professor rescheduled today's office-hours Zoom call to 5:30 PM.\n\nConfirm your attendance so the waiting room stays organized:\nhttps://zoom-campus.xyz/confirm-slot\n\nZoom Scheduling (Automated)",
+      "why": "Zoom notifications come from zoom.us, not zoom-campus.xyz. The mundane scheduling tone makes it easy to click without checking the domain.",
+      "teach": "Hover over links before clicking — legitimate Zoom links always use the zoom.us domain, not third-party sites.",
+      "red_flags": [
+        "random TLD (.xyz)",
+        "impersonating Zoom",
+        "external confirmation link"
+      ]
+    },
+    "ar": {
+      "tactic": "تصيد هادئ",
+      "from_name": "دعم اجتماعات زوم",
+      "subject": "تأكيد موعد اجتماع زوم (اليوم)",
+      "body": "قام أستاذك بإعادة جدولة مكالمة زوم الخاصة بالساعات المكتبية اليوم إلى الساعة 5:30 مساءً.\n\nأكّد حضورك حتى تظل غرفة الانتظار منظمة:\nhttps://zoom-campus.xyz/confirm-slot\n\nجدولة زوم (تلقائي)",
+      "why": "تأتي إشعارات زوم من zoom.us وليس من zoom-campus.xyz. نبرة الجدولة العادية تجعل من السهل النقر دون التحقق من النطاق.",
+      "teach": "مرر مؤشر الماوس فوق الروابط قبل النقر — تستخدم روابط زوم الشرعية دائماً نطاق zoom.us، وليس مواقع خارجية.",
+      "red_flags": [
+        "نطاق علوي عشوائي (.xyz)",
+        "انتحال صفة زوم",
+        "رابط تأكيد خارجي"
+      ]
+    },
+    "he": {
+      "tactic": "פישינג שקט",
+      "from_name": "תמיכת פגישות זום",
+      "subject": "אשר את משבצת פגישת הזום שלך (היום)",
+      "body": "המרצה שלך קבע מחדש את שעות הקבלה בזום להיום לשעה 17:30.\n\nאשר את השתתפותך כדי שחדר ההמתנה יישאר מאורגן:\nhttps://zoom-campus.xyz/confirm-slot\n\nתזמון זום (הודעה אוטומטית)",
+      "why": "התראות זום מגיעות מ-zoom.us, לא מ-zoom-campus.xyz. טון התזמון השגרתי מקל על לחיצה מבלי לבדוק את הדומיין.",
+      "teach": "רחף עם העכבר מעל קישורים לפני לחיצה עליהם — קישורי זום לגיטימיים משתמשים תמיד בדומיין zoom.us, לא באתרי צד שלישי.",
+      "red_flags": [
+        "סיומת דומיין אקראית (.xyz)",
+        "התחזות לזום",
+        "קישור אישור חיצוני"
+      ]
+    }
+  },
+  {
+    "id": "DB_03",
+    "dimension": "DB",
+    "from_email": "share@gdrive-notify.cc",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Quiet phishing",
+      "from_name": "Google Drive Sharing",
+      "subject": "Shared document: Final Project Guidelines",
+      "body": "A classmate shared \"Final Project Guidelines.pdf\" with you via Google Drive.\n\nOpen the document here:\nhttps://gdrive-notify.cc/shared/project-guidelines\n\nGoogle Drive Notification",
+      "why": "Real Google Drive sharing notifications come from google.com, not gdrive-notify.cc. The familiar sharing format tricks users into clicking without verifying.",
+      "teach": "Google Drive notifications always come from @google.com. Access shared files by going to drive.google.com directly.",
+      "red_flags": [
+        "non-Google sender domain",
+        "impersonating Google Drive interface",
+        "link to fake sharing page"
+      ]
+    },
+    "ar": {
+      "tactic": "تصيد هادئ",
+      "from_name": "مشاركة جوجل درايف",
+      "subject": "مستند مشترك: إرشادات المشروع النهائي",
+      "body": "قام زميل لك بمشاركة \"Final Project Guidelines.pdf\" معك عبر جوجل درايف.\n\nافتح المستند من هنا:\nhttps://gdrive-notify.cc/shared/project-guidelines\n\nإشعار جوجل درايف",
+      "why": "تأتي إشعارات مشاركة جوجل درايف الحقيقية من google.com، وليس من gdrive-notify.cc. يخدع تنسيق المشاركة المألوف المستخدمين للنقر دون تحقق.",
+      "teach": "تأتي إشعارات جوجل درايف دائماً من @google.com. قم بالوصول إلى الملفات المشتركة من خلال الانتقال إلى drive.google.com مباشرةً.",
+      "red_flags": [
+        "نطاق مرسل ليس تابعاً لجوجل",
+        "انتحال واجهة جوجل درايف",
+        "رابط إلى صفحة مشاركة مزيفة"
+      ]
+    },
+    "he": {
+      "tactic": "פישינג שקט",
+      "from_name": "שיתוף בגוגל דרייב",
+      "subject": "מסמך משותף: הנחיות לפרויקט גמר",
+      "body": "חבר ללימודים שיתף איתך את \"Final Project Guidelines.pdf\" באמצעות גוגל דרייב.\n\nפתח את המסמך כאן:\nhttps://gdrive-notify.cc/shared/project-guidelines\n\nהתראת גוגל דרייב",
+      "why": "התראות שיתוף אמיתיות של גוגל דרייב מגיעות מ-google.com, לא מ-gdrive-notify.cc. פורמט השיתוף המוכר מתעה משתמשים ללחוץ מבלי לאמת.",
+      "teach": "התראות גוגל דרייב מגיעות תמיד מ-@google.com. גש לקבצים משותפים על ידי מעבר ישיר אל drive.google.com.",
+      "red_flags": [
+        "דומיין שולח שאינו גוגל",
+        "התחזות לממשק גוגל דרייב",
+        "קישור לדף שיתוף מזויף"
+      ]
+    }
+  },
+  {
+    "id": "DB_04",
+    "dimension": "DB",
+    "from_email": "auth@sso-student-portal.net",
+    "correct": "Phishing",
+    "difficulty": "easy",
+    "en": {
+      "tactic": "Data-entry request / suspicious link",
+      "from_name": "Single Sign-On Service",
+      "subject": "Confirm your login details before Moodle sync",
+      "body": "Moodle sync requires your updated display name and phone number for two-factor authentication.\n\nComplete the form so your grades export correctly:\nhttps://sso-student-portal.net/confirm\n\nTechnical Support Team — Automated Notice",
+      "why": "Legitimate university login credential changes are handled through your university's official IT portal — not sso-student-portal.net. This form harvests credentials and personal data.",
+      "teach": "Never enter credentials on domains not published by your university's IT department — even if the jargon sounds technical and correct.",
+      "red_flags": [
+        "fake university login domain",
+        "form submission pressure tied to grades",
+        "credential harvesting"
+      ]
+    },
+    "ar": {
+      "tactic": "طلب إدخال بيانات / رابط مشبوه",
+      "from_name": "خدمة تسجيل الدخول الموحد (SSO)",
+      "subject": "تأكيد تفاصيل تسجيل الدخول قبل مزامنة مودل",
+      "body": "تتطلب مزامنة مودل تحديث اسم العرض ورقم الهاتف الخاص بك لإجراء التحقق بخطوتين.\n\nأكمل النموذج لتصدير درجاتك بشكل صحيح:\nhttps://sso-student-portal.net/confirm\n\nفريق الدعم التقني — إشعار تلقائي",
+      "why": "تتم معالجة تغييرات بيانات تسجيل الدخول الجامعية الشرعية من خلال بوابة تكنولوجيا المعلومات الرسمية بجامعتك — وليس عبر sso-student-portal.net. يقوم هذا النموذج بجمع بيانات الاعتماد والبيانات الشخصية.",
+      "teach": "لا تدخل أبداً بيانات الاعتماد الخاصة بك على نطاقات لم تنشرها إدارة تكنولوجيا المعلومات بجامعتك — حتى لو كانت المصطلحات تبدو تقنية وصحيحة.",
+      "red_flags": [
+        "نطاق تسجيل الدخول الجامعي المزيف",
+        "الضغط لتقديم النموذج لارتباطه بالدرجات",
+        "حصاد بيانات الاعتماد"
+      ]
+    },
+    "he": {
+      "tactic": "בקשת הזנת נתונים / קישור חשוד",
+      "from_name": "שירות SSO כניסה אחודה",
+      "subject": "אשר את פרטי ההתחברות שלך לפני סנכרון המודל",
+      "body": "סנכרון המודל דורש את שם התצוגה ומספר הטלפון המעודכנים שלך לצורך אימות דו-שלבי.\n\nמלא את הטופס כדי שהציונים שלך ייוצאו בצורה נכונה:\nhttps://sso-student-portal.net/confirm\n\nצוות התמיכה הטכנית — הודעה אוטומטית",
+      "why": "שינויים בפרטי התחברות אוניברסיטאיים לגיטימיים מנוהלים דרך פורטל ה-IT הרשמי של האוניברסיטה שלך — לא דרך sso-student-portal.net. טופס זה אוסף פרטי גישה ומידע אישי.",
+      "teach": "לעולם אל תזין פרטי גישה בדומיינים שאינם מפורסמים על ידי מחלקת ה-IT של האוניברסיטה שלך — אפילו אם המונחים המקצועיים נשמעים טכניים ונכונים.",
+      "red_flags": [
+        "דומיין כניסה אוניברסיטאי מזויף",
+        "לחץ למילוי הטופס הקשור לציונים",
+        "איסוף פרטי גישה"
+      ]
+    }
+  },
+  {
+    "id": "DB_05",
+    "dimension": "DB",
+    "from_email": "disbursements@student-aid-portal.com",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Data-entry request / suspicious link",
+      "from_name": "Financial Aid Office",
+      "subject": "Update your bank details for scholarship payout",
+      "body": "We're updating bank records for this semester's scholarship payments.\n\nSubmit your corrected bank account number through our secure form:\nhttps://student-aid-portal.com/banking-update\n\nFinancial Aid — Automated Notice",
+      "why": "Universities never collect bank details through external email links. student-aid-portal.com is not affiliated with your university despite the professional language.",
+      "teach": "Treat any unexpected request for bank details via email as hostile. Verify by calling your financial aid office using a number from the university website.",
+      "red_flags": [
+        "financial data collection via email link",
+        "fake aid portal domain",
+        "unsolicited banking request"
+      ]
+    },
+    "ar": {
+      "tactic": "طلب إدخال بيانات / رابط مشبوه",
+      "from_name": "مكتب المساعدات المالية",
+      "subject": "تحديث تفاصيل حسابك البنكي لصرف المنحة الدراسية",
+      "body": "نقوم بتحديث السجلات البنكية لمدفوعات المنح الدراسية لهذا الفصل الدراسي.\n\nأرسل رقم الحساب البنكي المصحح من خلال نموذجنا الآمن:\nhttps://student-aid-portal.com/banking-update\n\nالمساعدات المالية — إشعار تلقائي",
+      "why": "لا تجمع الجامعات أبداً تفاصيل البنك عبر روابط بريد إلكتروني خارجية. النطاق student-aid-portal.com غير تابع لجامعتك على الرغم من اللغة المهنية المستخدمة.",
+      "teach": "تعامل مع أي طلب غير متوقع للحصول على تفاصيل البنك عبر البريد الإلكتروني بحذر شديد. تحقق من خلال الاتصال بمكتب المساعدات المالية باستخدام رقم من موقع الجامعة الرسمي.",
+      "red_flags": [
+        "جمع البيانات المالية عبر رابط بريد إلكتروني",
+        "نطاق بوابة مساعدات مزيف",
+        "طلب بيانات بنكية غير مرغوب فيه"
+      ]
+    },
+    "he": {
+      "tactic": "בקשת הזנת נתונים / קישור חשוד",
+      "from_name": "משרד הסיוע הפיננסי",
+      "subject": "עדכן את פרטי הבנק שלך לצורך תשלום המלגה",
+      "body": "אנו מעדכנת את רישומי הבנק עבור תשלומי המלגות של סמסטר זה.\n\nשלח את מספר חשבון הבנק המעודכן שלך דרך הטופס המאובטח שלנו:\nhttps://student-aid-portal.com/banking-update\n\nמדור מלגות וסיוע פיננסי — הודעה אוטומטית",
+      "why": "אוניברסיטאות לעולם אינן אוספות פרטי בנק באמצעות קישורי אימייל חיצוניים. הדומיין student-aid-portal.com אינו מזוהה עם האוניברסיטה שלך למרות השפה המקצועית.",
+      "teach": "התייחס לכל בקשה בלתי צפויה לפרטי בנק באמצעות דוא\"ל כאל עוינת. אמת זאת על ידי פנייה למשרד המלגות והסיוע הפיננסי באמצעות מספר מאתר האוניברסיטה הרשמי.",
+      "red_flags": [
+        "איסוף נתונים פיננסיים באמצעות קישור באימייל",
+        "דומיין מזויף של פורטל סיוע",
+        "בקשה לא יזומה לפרטי בנק"
+      ]
+    }
+  },
+  {
+    "id": "DB_06",
+    "dimension": "DB",
+    "from_email": "licenses@campus-software.co",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Data-entry request / suspicious link",
+      "from_name": "Microsoft 365 License Manager",
+      "subject": "Annual software license acknowledgement required",
+      "body": "University workstations require annual Microsoft 365 license renewal.\n\nAcknowledge your license by entering your university login:\nhttps://campus-software.co/license-renew\n\nCompliance Team — Automated Notice",
+      "why": "Software license management is handled by university IT — not campus-software.co. This wizard harvests university login credentials under a compliance pretext.",
+      "teach": "Software renewals should come from your university IT department through official channels. Never enter your university credentials on third-party sites.",
+      "red_flags": [
+        "contractor spoof",
+        "credential harvesting via fake wizard",
+        "off-domain login page"
+      ]
+    },
+    "ar": {
+      "tactic": "طلب إدخال بيانات / رابط مشبوه",
+      "from_name": "مدير تراخيص Microsoft 365",
+      "subject": "مطلوب تأكيد ترخيص البرنامج السنوي",
+      "body": "تتطلب محطات العمل الجامعية تجديد ترخيص Microsoft 365 السنوي.\n\nأكّد ترخيصك عن طريق إدخال معلومات تسجيل الدخول الجامعية الخاصة بك:\nhttps://campus-software.co/license-renew\n\nفريق الامتثال — إشعار تلقائي",
+      "why": "تتم إدارة تراخيص البرامج بواسطة تكنولوجيا معلومات الجامعة وليس بواسطة campus-software.co. يقوم هذا المعالج بحصاد بيانات تسجيل الدخول الجامعية تحت ذريعة الامتثال.",
+      "teach": "يجب أن تأتي تجديدات البرامج من إدارة تكنولوجيا المعلومات بجامعتك عبر القنوات الرسمية. لا تدخل أبداً بيانات الاعتماد الجامعية الخاصة بك على مواقع الطرف الثالث.",
+      "red_flags": [
+        "انتحال صفة متعاقد",
+        "حصاد بيانات الاعتماد عبر معالج مزيف",
+        "صفحة تسجيل دخول خارج النطاق الرسمي"
+      ]
+    },
+    "he": {
+      "tactic": "בקשת הזנת נתונים / קישור חשוד",
+      "from_name": "מנהל רישיונות Microsoft 365",
+      "subject": "נדרש אישור שנתי של רישיון התוכנה",
+      "body": "תחנות עבודה באוניברסיטה דורשות חידוש שנתי של רישיונות Microsoft 365.\n\nאשר את הרישיון שלך על ידי הזנת פרטי ההתחברות האוניברסיטאיים שלך:\nhttps://campus-software.co/license-renew\n\nצוות תאימות — הודעה אוטומטית",
+      "why": "ניהול רישיונות תוכנה מטופל על ידי מחלקת ה-IT של האוניברסיטה — לא על ידי campus-software.co. אשף זה אוסף פרטי התחברות אוניברסיטאיים תחת תואנה של בדיקת תאימות.",
+      "teach": "חידושי תוכנה צריכים להגיע ממחלקת ה-IT של האוניברסיטה שלך דרך ערוצים רשמיים. לעולם אל תזין את אישורי הגישה האוניברסיטאיים שלך באתרי צד שלישי.",
+      "red_flags": [
+        "התחזות לקבלן שירות",
+        "איסוף פרטי התחברות באמצעות אשף מזויף",
+        "דף התחברות מחוץ לדומיין הרשמי"
+      ]
+    }
+  },
+  {
+    "id": "SV_01",
+    "dimension": "SV",
+    "from_email": "enforce@mail-alert-campus.online",
+    "correct": "Phishing",
+    "difficulty": "easy",
+    "en": {
+      "tactic": "Urgency / threat",
+      "from_name": "University Email Security",
+      "subject": "Account suspension in 24 hours",
+      "body": "We detected spam activity from your university email account.\n\nVerify your identity within 24 hours or your email and Moodle access will be suspended:\nhttps://mail-alert-campus.online/verify-account\n\nIncident Response Bot",
+      "why": "The 24-hour deadline is designed to make you panic and click without checking that mail-alert-campus.online is not your university's domain.",
+      "teach": "When you receive a threatening email, don't click — go directly to your university's IT help desk website or call them to check if it's real.",
+      "red_flags": [
+        "24-hour deadline",
+        "suspension threat",
+        "non-university.ac.il domain"
+      ]
+    },
+    "ar": {
+      "tactic": "استعجال / تهديد",
+      "from_name": "أمن البريد الإلكتروني بالجامعة",
+      "subject": "تعليق الحساب خلال 24 ساعة",
+      "body": "اكتشفنا نشاطاً عشوائياً (spam) من حساب البريد الإلكتروني الجامعي الخاص بك.\n\nتحقق من هويتك في غضون 24 ساعة وإلا سيتم تعليق وصولك إلى البريد الإلكتروني ومودل:\nhttps://mail-alert-campus.online/verify-account\n\nروبوت الاستجابة للحوادث",
+      "why": "تم تصميم مهلة الـ 24 ساعة لتجعلك تشعر بالذعر وتنقر دون التحقق من أن mail-alert-campus.online ليس نطاق جامعتك.",
+      "teach": "عندما تتلقى بريداً إلكترونياً يحتوي على تهديد، لا تنقر — انتقل مباشرةً إلى موقع مكتب مساعدة تكنولوجيا المعلومات بجامعتك أو اتصل بهم للتحقق مما إذا كان حقيقياً.",
+      "red_flags": [
+        "مهلة 24 ساعة",
+        "تهديد بالتعليق",
+        "نطاق ليس تابعاً للجامعة university.ac.il"
+      ]
+    },
+    "he": {
+      "tactic": "דחיפות / איום",
+      "from_name": "אבטחת דואר אלקטרוני באוניברסיטה",
+      "subject": "השעיית חשבון תוך 24 שעות",
+      "body": "זיהינו פעילות ספאם מחשבון הדוא\"ל האוניברסיטאי שלך.\n\nאמת את זהותך תוך 24 שעות או שגישתך לדוא\"ל ולמודל תושעה:\nhttps://mail-alert-campus.online/verify-account\n\nבוט תגובה לאירועים",
+      "why": "מועד ה-24 שעות נועד לגרום לך להיכנס לפאניקה וללחוץ מבלי לבדוק ש-mail-alert-campus.online אינו הדומיין של האוניברסיטה שלך.",
+      "teach": "כאשר אתה מקבל אימייל מאיים, אל תלחץ — פנה ישירות לאתר תמיכת ה-IT של האוניברסיטה שלך או התקשר אליהם כדי לבדוק אם זה אמיתי.",
+      "red_flags": [
+        "מועד של 24 שעות",
+        "איום בהשעיה",
+        "דומיין שאינו university.ac.il"
+      ]
+    }
+  },
+  {
+    "id": "SV_02",
+    "dimension": "SV",
+    "from_email": "urgent@scholarship-alert.org",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Urgency / threat",
+      "from_name": "Scholarship Compliance Office",
+      "subject": "Final warning — your scholarship will be revoked tonight",
+      "body": "Our records show incomplete tuition verification for your scholarship.\n\nIf not resolved by tonight, your scholarship funds will be returned to the general pool:\nhttps://scholarship-alert.org/appeal\n\nFinancial Compliance — Automated Notice",
+      "why": "Scholarships are never revoked overnight through an external portal. The tonight-or-never deadline is a pressure tactic to bypass critical thinking.",
+      "teach": "Pause, screenshot the email, and call your financial aid office using a number from the official university website — not from the email itself.",
+      "red_flags": [
+        "final-warning tone",
+        "tonight deadline",
+        "off-domain appeals portal"
+      ]
+    },
+    "ar": {
+      "tactic": "استعجال / تهديد",
+      "from_name": "مكتب امتثال المنح الدراسية",
+      "subject": "تحذير نهائي — سيتم إلغاء منحتك الدراسية الليلة",
+      "body": "تظهر سجلاتنا عدم اكتمال التحقق من الرسوم الدراسية لمنحتك.\n\nإذا لم يتم حل المشكلة بحلول الليلة، فسيتم إرجاع أموال المنحة الخاصة بك إلى المجمع العام:\nhttps://scholarship-alert.org/appeal\n\nالامتثال المالي — إشعار تلقائي",
+      "why": "لا يتم إلغاء المنح الدراسية أبداً بين عشية وضاها من خلال بوابة خارجية. الموعد النهائي \"الليلة أو أبداً\" هو أسلوب ضغط لتجاوز التفكير النقدي.",
+      "teach": "توقف مؤقتاً، خذ لقطة شاشة للبريد الإلكتروني، واتصل بمكتب المساعدات المالية باستخدام رقم من موقع الجامعة الرسمي — وليس من البريد الإلكتروني نفسه.",
+      "red_flags": [
+        "نبرة تحذير نهائي",
+        "موعد نهائي الليلة",
+        "بوابة استئناف خارج النطاق الرسمي"
+      ]
+    },
+    "he": {
+      "tactic": "דחיפות / איום",
+      "from_name": "משרד תאימות מלגות",
+      "subject": "אזהרה אחרונה — המלגה שלך תבוטל הלילה",
+      "body": "הרשומות שלנו מראות אימות שכר לימוד חסר עבור המלגה שלך.\n\nאם הנושא לא ייפתר עד הלילה, כספי המלגה שלך יוחזרו לקופה הכללית:\nhttps://scholarship-alert.org/appeal\n\nתאימות פיננסית — הודעה אוטומטית",
+      "why": "מלגות אינן מבוטלות לעולם ביו לילה דרך פורטל חיצוני. דדליין של \"הלילה או לעולם לא\" הוא טקטיקת לחץ לעקיפת חשיבה ביקורתית.",
+      "teach": "עצור, צלם מסך של המייל, והתקשר למשרד המלגות והסיוע הפיננסי שלך באמצעות מספר מאתר האוניברסיטה הרשמי — לא מהמייל עצמו.",
+      "red_flags": [
+        "טון של אזהרה אחרונה",
+        "דדליין של הלילה",
+        "פורטל ערעורים מחוץ לדומיין הרשמי"
+      ]
+    }
+  },
+  {
+    "id": "SV_03",
+    "dimension": "SV",
+    "from_email": "integrity@exam-review-board.net",
+    "correct": "Phishing",
+    "difficulty": "hard",
+    "en": {
+      "tactic": "Urgency / threat",
+      "from_name": "Academic Integrity Committee",
+      "subject": "Academic dishonesty flag — immediate response required",
+      "body": "A plagiarism detection tool flagged similarities in your recent submission.\n\nYou must certify originality through this portal before a hold is placed on your transcript:\nhttps://exam-review-board.net/certify\n\nAcademic Integrity Automation",
+      "why": "Real academic integrity processes involve formal meetings with faculty — not emergency logins on exam-review-board.net. The accusation triggers fear to override caution.",
+      "teach": "Accusations about cheating are emotionally charged by design. Contact your professor or department directly through official channels before responding.",
+      "red_flags": [
+        "accusatory emotional hook",
+        "transcript hold threat",
+        "unverifiable external domain"
+      ]
+    },
+    "ar": {
+      "tactic": "استعجال / تهديد",
+      "from_name": "لجنة النزاهة الأكاديمية",
+      "subject": "بلاغ عن عدم نزاهة أكاديمية — مطلوب رد فوري",
+      "body": "أشارت أداة كشف الانتحال الأدبي إلى وجود تشابه في بحثك المقدم مؤخراً.\n\nيجب عليك إثبات أصالة البحث عبر هذه البوابة قبل وضع تعليق على كشف درجاتك:\nhttps://exam-review-board.net/certify\n\nأتمتة النزاهة الأكاديمية",
+      "why": "تتضمن إجراءات النزاهة الأكاديمية الحقيقية اجتماعات رسمية مع أعضاء هيئة التدريس — وليس تسجيل دخول طارئ على exam-review-board.net. يثير الاتهام الخوف لتجاوز الحذر.",
+      "teach": "الاتهامات المتعلقة بالغش تكون مشحونة عاطفياً بطبيعتها. اتصل بأستاذك أو قسمك مباشرةً عبر القنوات الرسمية قبل الرد.",
+      "red_flags": [
+        "خطاف عاطفي اتهامي",
+        "تهديد بتعليق كشف الدرجات",
+        "نطاق خارجي لا يمكن التحقق منه"
+      ]
+    },
+    "he": {
+      "tactic": "דחיפות / איום",
+      "from_name": "הוועדה לטוהר הבחינות",
+      "subject": "חשד לחוסר יושרה אקדמית — נדרשת תגובה מיידית",
+      "body": "כלי לגילוי העתקות זיהה דמיון בעבודה שהגשת לאחרונה.\n\nעליך להצהיר על מקוריות העבודה דרך פורטל זה לפני שיוטל עיכוב על גיליון הציונים שלך:\nhttps://exam-review-board.net/certify\n\nאוטומציית טוהר הבחינות והיושרה האקדמית",
+      "why": "תהליכי בירור אמיתיים של יושרה אקדמית כוללים פגישות רשמיות עם סגל אקדמי — לא כניסות חירום בכתובת exam-review-board.net. ההאשמה מעוררת פחד שנועד לעקוף זהירות.",
+      "teach": "האשמות על העתקה או חוסר יושרה הן טעונות רגשית בכוונה תחילה. פנה למרצה או למחלקה שלך ישירות בערוצים הרשמיים לפני שתגיב.",
+      "red_flags": [
+        "פנייה רגשית מאשימה",
+        "איום בעיכוב גיליון ציונים",
+        "דומיין חיצוני שאינו ניתן לאימות"
+      ]
+    }
+  },
+  {
+    "id": "SV_04",
+    "dimension": "SV",
+    "from_email": "awards@scholarship-portal.ac",
+    "correct": "Phishing",
+    "difficulty": "easy",
+    "en": {
+      "tactic": "Financial reward / social engineering",
+      "from_name": "Student Innovation Fund",
+      "subject": "You've been selected for a $2,000 research grant!",
+      "body": "Congratulations! You were randomly selected for a student research mini-grant.\n\nClaim your award by confirming your bank details for direct deposit:\nhttps://scholarship-portal.ac/claim-award\n\nGrants Office — Automated Notice",
+      "why": "Unexpected prize notifications from scholarship-portal.ac are a classic advance-fee scam. Real grants have transparent application processes and don't request bank details via email.",
+      "teach": "Legitimate grants publish clear criteria and notify through official university channels — never through surprise emails asking for bank information.",
+      "red_flags": [
+        "surprise winnings",
+        "fake academic domain (.ac)",
+        "bank details requested via link"
+      ]
+    },
+    "ar": {
+      "tactic": "مكافأة مالية / هندسة اجتماعية",
+      "from_name": "صندوق ابتكار الطلاب",
+      "subject": "لقد تم اختيارك للحصول على منحة بحثية بقيمة 2000 دولار!",
+      "body": "تهانينا! تم اختيارك عشوائياً للحصول على منحة بحثية صغيرة للطلاب.\n\nاطالب بجائزتك من خلال تأكيد تفاصيل حسابك البنكي للإيداع المباشر:\nhttps://scholarship-portal.ac/claim-award\n\nمكتب المنح — إشعار تلقائي",
+      "why": "تعتبر إشعارات الجوائز غير المتوقعة من scholarship-portal.ac عملية احتيال كلاسيكية. المنح الحقيقية لها عمليات تقديم شفافة ولا تطلب تفاصيل البنك عبر البريد الإلكتروني.",
+      "teach": "تنشر المنح الشرعية معايير واضحة وتخطر عبر القنوات الجامعية الرسمية — وليس عبر رسائل بريد إلكتروني مفاجئة تطلب معلومات بنكية.",
+      "red_flags": [
+        "فوز مفاجئ",
+        "نطاق أكاديمي مزيف (.ac)",
+        "تفاصيل الحساب البنكي مطلوبة عبر رابط"
+      ]
+    },
+    "he": {
+      "tactic": "תגמול כספי / הנדסה חברתית",
+      "from_name": "קרן החדשנות לסטודנטים",
+      "subject": "נבחרת לקבלת מענק מחקר על סך $2,000!",
+      "body": "ברכותינו! נבחרת באקראי לקבלת מענק מחקר קטן לסטודנטים.\n\nתבוע את המענק שלך על ידי אישור פרטי הבנק להפקדה ישירה:\nhttps://scholarship-portal.ac/claim-award\n\nמשרד המענקים — הודעה אוטומטית",
+      "why": "הודעות פרס בלתי צפויות מ-scholarship-portal.ac הן הונאה קלאסית. למענקים אמיתיים יש תהליכי הגשה שקופים והם אינם מבקשים פרטי בנק במייל.",
+      "teach": "מענקים לגיטימיים מפרסמים קריטריונים ברורים ומודיעים בערוצים הרשמיים של האוניברסיטה — לעולם לא באמצעות הודעות דוא\"ל מפתיעות המבקשות פרטי בנק.",
+      "red_flags": [
+        "זכייה מפתיעה",
+        "דומיין אקדמי מזויף (.ac)",
+        "בקשה לפרטי בנק באמצעות קישור"
+      ]
+    }
+  },
+  {
+    "id": "SV_05",
+    "dimension": "SV",
+    "from_email": "dean.request@university-admin.site",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Financial reward / social engineering",
+      "from_name": "Office of the Dean",
+      "subject": "Urgent request from the Dean — confidential",
+      "body": "I need a reliable student to help coordinate a mentorship event. Please purchase two gift vouchers from the link below — you'll be reimbursed immediately.\n\nhttps://university-admin.site/voucher-invoice\n\nSent from Dean's mobile",
+      "why": "This is authority impersonation — a dean would never ask a random student to buy gift cards via email. university-admin.site is not the university's official domain.",
+      "teach": "Senior administrators never ask students to buy gift cards. Verify any unusual request by calling the dean's office using the number on the university website.",
+      "red_flags": [
+        "authority impersonation",
+        "gift voucher purchase request",
+        "fake domain mimicking leadership"
+      ]
+    },
+    "ar": {
+      "tactic": "مكافأة مالية / هندسة اجتماعية",
+      "from_name": "مكتب العميد",
+      "subject": "طلب عاجل من العميد — سري",
+      "body": "أحتاج إلى طالب موثوق به للمساعدة في تنسيق حدث إرشاد وتوجيه. يرجى شراء قسيمتي هدايا من الرابط أدناه — سيتم تعويضك على الفور.\n\nhttps://university-admin.site/voucher-invoice\n\nأرسلت من هاتف العميد المحمول",
+      "why": "هذا انتحال لشخصية ذات سلطة — لن يطلب العميد أبداً من طالب عشوائي شراء بطاقات هدايا عبر البريد الإلكتروني. النطاق university-admin.site ليس النطاق الرسمي للجامعة.",
+      "teach": "لا يطلب كبار المسؤولين أبداً من الطلاب شراء بطاقات هدايا. تحقق من أي طلب غير عادي عن طريق الاتصال بمكتب العميد باستخدام الرقم الموجود على موقع الجامعة.",
+      "red_flags": [
+        "انتحال شخصية ذات سلطة",
+        "طلب شراء قسيمة هدايا",
+        "نطاق مزيف يحاكي القيادة"
+      ]
+    },
+    "he": {
+      "tactic": "תגמול כספי / הנדסה חברתית",
+      "from_name": "לשכת הדיקן",
+      "subject": "בקשה דחופה מהדיקן — סודי",
+      "body": "אני זקוק לסטודנט אמין שיסייע בתיאום אירוע חונכות. אנא רכוש שני שוברי מתנה מהקישור הבא — תקבל החזר כספי באופן מיידי.\n\nhttps://university-admin.site/voucher-invoice\n\nנשלח מהנייד של הדיקן",
+      "why": "זוהי התחזות לבעל סמכות — דיקן לעולם לא יבקש מסטודנט אקראי לקנות כרטיסי מתנה באמצעות אימייל. university-admin.site אינו הדומיין הרשמי של האוניברסיטה.",
+      "teach": "מנהלים בכירים לעולם אינם מבקשים מסטודנטים לקנות כרטיסי מתנה. אמת כל בקשה חריגה על ידי התקשרות ללשכת הדיקן באמצעות המספר המופיע באתר האוניברסיטה.",
+      "red_flags": [
+        "התחזות לבעל סמכות",
+        "בקשה לרכישת שוברי מתנה",
+        "דומיין מזויף המדמה הנהלה"
+      ]
+    }
+  },
+  {
+    "id": "SV_06",
+    "dimension": "SV",
+    "from_email": "apply@career-connect.edu.org",
+    "correct": "Phishing",
+    "difficulty": "medium",
+    "en": {
+      "tactic": "Financial reward / social engineering",
+      "from_name": "Career Connect Fellows",
+      "subject": "Priority internship — small placement fee required",
+      "body": "Two premium internship slots are reserved exclusively for students in your program.\n\nPay the placement fee tonight to secure your spot before the waitlist closes:\nhttps://career-connect.edu.org/secure-spot\n\nPartner Success Desk",
+      "why": "Legitimate internship programs never charge upfront placement fees through unsolicited emails. career-connect.edu.org uses a deceptive domain designed to look academic.",
+      "teach": "Real recruiters and career offices never charge micro-fees via email. Check with your university's career services before paying anything.",
+      "red_flags": [
+        "pay-to-play internship",
+        "exclusivity flattery",
+        "tonight-only pressure",
+        "deceptive .edu.org domain"
+      ]
+    },
+    "ar": {
+      "tactic": "مكافأة مالية / هندسة اجتماعية",
+      "from_name": "زملاء كارير كونكت",
+      "subject": "تدريب داخلي ذو أولوية — مطلوب رسوم توظيف صغيرة",
+      "body": "تم حجز مكانين متميزين للتدريب الداخلي حصرياً للطلاب في برنامجك.\n\nادفع رسوم التوظيف الليلة لتأمين مكانك قبل إغلاق قائمة الانتظار:\nhttps://career-connect.edu.org/secure-spot\n\nمكتب نجاح الشركاء",
+      "why": "لا تفرض برامج التدريب الداخلي الشرعية أبداً رسوماً مسبقة للتوظيف عبر رسائل بريد إلكتروني غير مرغوب فيها. يستخدم النطاق career-connect.edu.org نطاقاً خادعاً مصمماً ليمثل جهة أكاديمية.",
+      "teach": "لا يفرض مسؤولو التوظيف ومكاتب المهن الحقيقيون رسوماً رمزية عبر البريد الإلكتروني. تحقق مع الخدمات المهنية بجامعتك قبل دفع أي شيء.",
+      "red_flags": [
+        "تدريب مدفوع الأجر مسبقاً",
+        "إطراء الحصرية",
+        "ضغط متعلق بمهلة الليلة فقط",
+        "نطاق خادع .edu.org"
+      ]
+    },
+    "he": {
+      "tactic": "תגמול כספי / הנדסה חברתית",
+      "from_name": "עמיתי קריירה קונקט",
+      "subject": "התמחות בעדיפות גבוהה — נדרש דמי השמה סמליים",
+      "body": "שתי משבצות התמחות פרימיום שמורות באופן בלעדי לסטודנטים בתוכנית שלך.\n\nשלם את דמי ההשמה הלילה כדי להבטיח את מקומך לפני שרשימת ההמתנה תיסגר:\nhttps://career-connect.edu.org/secure-spot\n\nדסק הצלחת שותפים",
+      "why": "תוכניות התמחות לגיטימיות לעולם אינן גובות דמי השמה מראש באמצעות הודעות דוא\"ל לא יזומות. הדומיין career-connect.edu.org משתמש בדומיין מטעה שנועד להיראות אקדמי.",
+      "teach": "מגייסים ומשרדי קריירה אמיתיים לעולם אינם גובים מיקرو-תשלומים באמצעות דוא\"ל. בדוק עם שירותי הקריירה של האוניברסיטה שלך לפני שתשלם משהו.",
+      "red_flags": [
+        "התמחות בתשלום מראש כדי להתקבל",
+        "חנופה על בלעדיות",
+        "לחץ לביצוע תשלום הלילה",
+        "דומיין .edu.org מטעה"
+      ]
+    }
+  }
+]
