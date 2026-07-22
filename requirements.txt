@@ -1,6 +1,8 @@
-streamlit
+streamlit==1.57.0
 openai
 pandas
 plotly
 gspread
 google-auth
+google-auth-httplib2
+google-api-python-client
